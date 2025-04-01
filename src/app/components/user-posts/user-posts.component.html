@@ -2,7 +2,10 @@
   <div class="card-body">
     <h5 class="card-title">{{ post.title }}</h5>
     <p class="card-text">{{ post.body }}</p>
-    <p><i class="bi bi-heart-fill text-danger"></i> {{ post.reactions.likes }} Likes y {{ post.reactions.dislikes }} Dislikes</p>
+    <p>
+      <i class="bi bi-heart-fill text-danger cursor-pointer"></i> {{ post.reactions.likes }}  
+      <i class="bi bi-hand-thumbs-down-fill text-secondary cursor-pointer ms-2"></i> {{ post.reactions.dislikes }}
+    </p>
     
     <h6>comentarios:</h6>
     <div *ngFor="let comment of comments[post.id]">

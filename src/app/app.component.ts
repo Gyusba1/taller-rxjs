@@ -35,12 +35,12 @@ export class AppComponent {
             return this.getPosts(this.user.id);
           } else {
             this.errorMessage = 'No existe';
-            return of([]); // Return an empty array if no user is found
+            return of([]); 
           }
         }),
         catchError((error) => {
           this.errorMessage = 'An error occurred while fetching user data.';
-          return of([]); // Handle errors gracefully
+          return of([]);
         })
       )
       .subscribe((posts) => {

@@ -34,12 +34,12 @@ export class AppComponent {
             this.user = response.users[0];
             return this.getPosts(this.user.id);
           } else {
-            this.errorMessage = 'No existe';
+            this.errorMessage = 'El usuario no existe';
             return of([]); 
           }
         }),
         catchError((error) => {
-          this.errorMessage = 'An error occurred while fetching user data.';
+          this.errorMessage = 'Un error ha ocurrido!';
           return of([]);
         })
       )

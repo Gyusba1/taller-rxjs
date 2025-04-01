@@ -1,0 +1,12 @@
+<div *ngFor="let post of posts" class="card mt-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.body }}</p>
+    <p><i class="bi bi-heart-fill text-danger"></i> {{ post.reactions.likes }} Likes y {{ post.reactions.dislikes }} Dislikes</p>
+    
+    <h6>comentarios:</h6>
+    <div *ngFor="let comment of comments[post.id]">
+      <p>{{ comment.user.username }}: {{ comment.body }}</p>
+    </div>
+  </div>
+</div>
